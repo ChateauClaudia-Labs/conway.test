@@ -1,0 +1,11 @@
+__pycache__/
+
+reports/
+~*.docx
+~*.xlsx
+
+*.egg-info/
+
+.ipynb_checkpoints/
+
+

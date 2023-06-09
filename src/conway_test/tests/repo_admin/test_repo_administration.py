@@ -48,8 +48,7 @@ class TestRepoAdministration(AcceptanceTestCase):
 
     def test_create_branch(self):
         '''
-        Checks that the :class:`RepoAdministration` correctly scaffolds a set of GIT repos for a standard
-        project based on the :class:`conway`.
+        Checks that the :class:`RepoAdministration` correctly creates a feature branch for all pertinent repos.
 
         '''
         MY_NAME                                         = "repo_admin.create_branch"
@@ -69,7 +68,7 @@ class TestRepoAdministration(AcceptanceTestCase):
             admin                                       = RepoAdministration(local_root     = local_repos_root, 
                                                                              remote_root    = remote_repos_root, 
                                                                              repo_bundle    = None)
-            repo_bundle                                 = admin.create_branch(work_branch_name = "feature 1234") 
+            repo_bundle                                 = admin.create_branch(branch_name = "feature 1234") 
 
             admin.repo_bundle                           = repo_bundle
 

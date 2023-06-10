@@ -1,11 +1,19 @@
+# Python build
 __pycache__/
-
-reports/
-~*.docx
-~*.xlsx
-
 *.egg-info/
 
-.ipynb_checkpoints/
+
+# Used in documentation
+build/
+*.~docx
+*.~xlsx
+*.~vsdx
+*.~pptx
 
 
+# Used in operator tools
+*.ipynb_checkpoints/
+
+# Used in test scenarios
+ACTUALS@*/
+RUN_NOTES/

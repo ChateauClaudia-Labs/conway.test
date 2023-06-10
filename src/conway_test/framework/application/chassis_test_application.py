@@ -1,7 +1,16 @@
 
 from conway.application.application                                import Application
 
-from vulnerability_management.observability.vm_logger                           import VM_Logger
+from conway.observability.logger                                    import Logger
+
+class Test_Logger(Logger):
+    '''
+    This is a mock logger, needed in order to run the tests of the :class:`conway_test`.
+
+    Specifically, it is needed by the :class:`Chassis_Test_Application`. Please refer to its
+    documentation as to why these mock classes are needed in order to run the tests.
+    '''
+
 
 class Chassis_Test_Application(Application):
 
@@ -19,7 +28,7 @@ class Chassis_Test_Application(Application):
     '''
     def __init__(self):
 
-        logger                                          = VM_Logger(activation_level=VM_Logger.LEVEL_INFO)
+        logger                                          = Test_Logger(activation_level=Logger.LEVEL_INFO)
           
         super().__init__(logger)
 

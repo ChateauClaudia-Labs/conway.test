@@ -1,5 +1,6 @@
+import os                                                           as _os
 
-from conway.application.application                                import Application
+from conway.application.application                                 import Application
 
 from conway.observability.logger                                    import Logger
 
@@ -28,7 +29,22 @@ class Chassis_Test_Application(Application):
     '''
     def __init__(self):
 
-        logger                                          = Test_Logger(activation_level=Logger.LEVEL_INFO)
+        APP_NAME                        = "ChassisTestApp"
+        logger                          = Test_Logger(activation_level=Logger.LEVEL_INFO)
+
+        # __file__ is something like 
+        #
+        #   'C:\Alex\Code\conway\conway.test\src\conway_test\framework\application\chassis_test_application.py'
+        #
+        #
+        # So to get the project folder ("conway") we need to go 6 directories up
+        #
+        directory                       = _os.path.dirname(__file__)
+
+        for idx in range(6):
+            directory                   = _os.path.dirname(directory)
+        project_directory               = directory   
+        config_path                     = project_directory + "/config"     
           
-        super().__init__(logger)
+        super().__init__(app_name=APP_NAME, config_path=config_path, logger=logger)
 

@@ -37,11 +37,11 @@ class Chassis_Test_Application(Application):
         #   'C:\Alex\Code\conway\conway.test\src\conway_test\framework\application\chassis_test_application.py'
         #
         #
-        # So to get the project folder ("conway") we need to go 6 directories up
+        # So to get the project folder ("conway") we need to go 6 directories up, so 1 first and then 5 in the loop
         #
         directory                       = _os.path.dirname(__file__)
 
-        for idx in range(6):
+        for idx in range(5):
             directory                   = _os.path.dirname(directory)
         project_directory               = directory   
         config_path                     = project_directory + "/config"     

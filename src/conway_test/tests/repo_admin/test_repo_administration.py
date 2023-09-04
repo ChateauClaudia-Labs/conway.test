@@ -86,18 +86,25 @@ class TestRepoAdministration(AcceptanceTestCase):
         TEST_PROJECT                                    = "cash"
 
         SS                                              = ScaffoldingStatics
-        params_dict                                     = {SS.APP_CODE_PARAM:                   TEST_PROJECT, 
-                                                            SS.APP_NAME_PARAM:                  "CashManagement", 
-                                                            SS.APP_NAME_UPPER_PARAM:            "CASH_MANAGEMENT",
-                                                            SS.APP_ABBREVIATION_UPPER_PARAM:    "CM",
-                                                            SS.APP_ABBREVIATION_LOWER_PARAM:    "cm",
-                                                            SS.APP_MODULE_PARAM:                "cash_management",
-                                                            
+                                                         
+        params_dict                                    = {
+                                                            SS.PROJECT_PARAM:                   TEST_PROJECT,
                                                             SS.AUTHOR_PARAM:                    "test_scaffold_101",
                                                             SS.AUTHOR_EMAIL_PARAM:              "NA",
                                                             SS.PROJECT_DESCRIPTION_PARAM:       "Sample application used to test scaffolding funtionality of Conway",
-                                                            }
-        variables_dict                                  = {SS.PARAMS:               params_dict}
+
+                                                            SS.APP_PARAM:                        "cash_management",
+                                                            SS.APP_CODE_PARAM:                  "cm",
+
+                                                            SS.CALC_SVC_PARAM:                  "risk", #["pricing", "risk"],
+                                                            SS.CALC_SVC_RESOURCE:               "invoice",
+                                                            SS.IMPORT_SVC_PARAM:                "booking",
+                                                            SS.IMPORT_SVC_RESOURCE:             "order",
+
+                                                            SS.INPUT_HUB_PARAM:                 "datasources",
+                                                            SS.OUTPUT_HUB_PARAM:                "reports",
+                                                        }
+        variables_dict                                  = {SS.PARAMS:                     params_dict}
         scaffold_spec                                   = ScaffoldSpec(f"{ScaffoldSpec.standard_templates_location()}/101", 
                                                                        variables_dict)
 

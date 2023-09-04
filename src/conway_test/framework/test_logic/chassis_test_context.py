@@ -14,10 +14,13 @@ class Chassis_TestContext(AcceptanceTestContext):
                  seeding_round                  = 0):
         '''
         This class is a Python context manager intended to be invoked by each test method of any of the test classes in
-        the vulnerability_management_test module.
+        the a Conway's application test module.
 
         @param test_case_name A string, representing the "name" of the test case using this context. It should match
-                exactly what appears in the $VULNERABILITY_MANAGEMENT_SCENARIOS_REPO/ScenariosIds.yaml file.
+                exactly what appears in the Conway application's ScenariosIds.yaml file. Such file is typically located
+                via an environment variable setting such as $'CHASSIS_SCENARIOS_REPO for Conway framework's test cases,
+                or a Conway-application-specific environment variable (for example, $VULNERABILITY_MANAGEMENT_SCENARIOS_REPO/ScenariosIds.yaml 
+                for a hypotethical Conway application called "VulnerabilityManagement").
 
         @param notes A AcceptanceTestNotes object, that should be the data structure in which the test case can record
                 observations in the course of its execution under this context. When the context exits these notes
